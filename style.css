@@ -1,0 +1,651 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", sans-serif;
+    background: #080014;
+    color: white;
+    overflow-x: hidden;
+    text-align: center;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+section {
+    min-height: 100vh;
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+
+    padding: 30px;
+}
+
+section.active {
+    display: flex;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+    border: none;
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+    padding: 14px 30px;
+
+    border-radius: 30px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff1493,
+            #8a2be2
+        );
+
+    box-shadow:
+        0 0 25px
+        rgba(255, 20, 147, 0.5);
+
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+
+    box-shadow:
+        0 0 40px
+        rgba(255, 20, 147, 0.9);
+}
+
+
+/* =========================
+   START
+========================= */
+
+#start {
+    background:
+        radial-gradient(
+            circle at top,
+            #4b006e,
+            transparent 40%
+        ),
+        linear-gradient(
+            135deg,
+            #080014,
+            #17002b
+        );
+}
+
+#start h1 {
+    font-size:
+        clamp(45px, 8vw, 90px);
+
+    margin-bottom: 20px;
+
+    animation: glow 2s infinite alternate;
+}
+
+#start p {
+    font-size: 22px;
+
+    margin-bottom: 40px;
+
+    opacity: 0.9;
+}
+
+.gift-icon {
+    font-size: 90px;
+
+    margin-bottom: 20px;
+
+    animation: floating 2s infinite;
+}
+
+
+/* =========================
+   GLOW
+========================= */
+
+@keyframes glow {
+
+    from {
+        text-shadow:
+            0 0 10px #ff1493;
+    }
+
+    to {
+        text-shadow:
+            0 0 20px #ff1493,
+            0 0 40px #8a2be2,
+            0 0 70px #ff1493;
+    }
+
+}
+
+
+/* =========================
+   FLOATING
+========================= */
+
+@keyframes floating {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+}
+
+
+/* =========================
+   COUNTDOWN
+========================= */
+
+#countdown {
+    background:
+        radial-gradient(
+            circle,
+            #28004d,
+            #080014
+        );
+}
+
+#countNumber {
+    font-size: 150px;
+
+    color: #ff69b4;
+
+    animation:
+        countAnim 1s ease;
+}
+
+@keyframes countAnim {
+
+    0% {
+        transform: scale(2);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+}
+
+
+/* =========================
+   BIRTHDAY
+========================= */
+
+#birthday {
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #49005f,
+            #100020
+        );
+}
+
+.birthday-title {
+    font-size:
+        clamp(45px, 8vw, 90px);
+
+    color: #ffd700;
+
+    animation:
+        glow 1.5s infinite alternate;
+}
+
+.name {
+    font-size:
+        clamp(35px, 6vw, 70px);
+
+    margin: 20px 0;
+
+    color: #ff69b4;
+}
+
+.message {
+    max-width: 750px;
+
+    font-size: 21px;
+
+    line-height: 1.7;
+
+    margin: 20px auto 35px;
+}
+
+
+/* =========================
+   BALLOONS
+========================= */
+
+.balloon {
+    position: absolute;
+
+    bottom: -150px;
+
+    width: 60px;
+
+    height: 75px;
+
+    border-radius: 50%;
+
+    animation:
+        floatBalloon linear infinite;
+}
+
+.balloon::after {
+    content: "";
+
+    position: absolute;
+
+    width: 2px;
+
+    height: 100px;
+
+    background: white;
+
+    top: 70px;
+
+    left: 50%;
+}
+
+.b1 {
+    left: 10%;
+
+    background: #ff1493;
+
+    animation-duration: 8s;
+}
+
+.b2 {
+    left: 30%;
+
+    background: #00ffff;
+
+    animation-duration: 10s;
+}
+
+.b3 {
+    left: 55%;
+
+    background: #ffd700;
+
+    animation-duration: 7s;
+}
+
+.b4 {
+    left: 80%;
+
+    background: #8a2be2;
+
+    animation-duration: 9s;
+}
+
+@keyframes floatBalloon {
+
+    from {
+        transform:
+            translateY(0);
+    }
+
+    to {
+        transform:
+            translateY(-120vh);
+    }
+
+}
+
+
+/* =========================
+   MEMORIES
+========================= */
+
+#memories {
+    background:
+        linear-gradient(
+            135deg,
+            #17002b,
+            #350044
+        );
+}
+
+.section-title {
+    font-size: 45px;
+
+    margin-bottom: 40px;
+
+    color: #ffd700;
+}
+
+.memory-container {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    max-width: 1000px;
+}
+
+.memory {
+    width: 260px;
+
+    height: 320px;
+
+    background:
+        rgba(255,255,255,0.08);
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.2);
+
+    backdrop-filter: blur(10px);
+
+    transition: 0.4s;
+}
+
+.memory:hover {
+    transform:
+        translateY(-15px)
+        rotate(2deg);
+}
+
+.memory img {
+    width: 100%;
+
+    height: 210px;
+
+    object-fit: cover;
+}
+
+.memory p {
+    padding: 20px;
+
+    font-size: 17px;
+}
+
+
+/* =========================
+   SECRET MESSAGE
+========================= */
+
+#secret {
+    background:
+        radial-gradient(
+            circle,
+            #350044,
+            #080014
+        );
+}
+
+.envelope {
+    width: 300px;
+
+    height: 200px;
+
+    background: #ff1493;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 70px;
+
+    cursor: pointer;
+
+    transition: 0.5s;
+
+    margin-top: 30px;
+
+    box-shadow:
+        0 0 40px
+        rgba(255,20,147,0.5);
+}
+
+.envelope:hover {
+    transform: scale(1.1);
+}
+
+.secret-message {
+    display: none;
+
+    max-width: 700px;
+
+    margin-top: 40px;
+
+    font-size: 24px;
+
+    line-height: 1.8;
+
+    animation:
+        appear 1s ease;
+}
+
+@keyframes appear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+/* =========================
+   GIFTS
+========================= */
+
+#gifts {
+    background:
+        linear-gradient(
+            135deg,
+            #080014,
+            #26003d
+        );
+}
+
+.gift-container {
+    display: flex;
+
+    gap: 30px;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    margin-top: 40px;
+}
+
+.gift {
+    width: 160px;
+
+    height: 160px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff1493,
+            #8a2be2
+        );
+
+    border-radius: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 70px;
+
+    cursor: pointer;
+
+    transition: 0.4s;
+}
+
+.gift:hover {
+    transform:
+        rotate(8deg)
+        scale(1.1);
+}
+
+.gift-result {
+    margin-top: 35px;
+
+    font-size: 25px;
+
+    min-height: 40px;
+}
+
+
+/* =========================
+   FINAL
+========================= */
+
+#final {
+    background:
+        radial-gradient(
+            circle,
+            #4d005c,
+            #080014
+        );
+}
+
+.final-title {
+    font-size:
+        clamp(45px, 8vw, 90px);
+
+    color: #ffd700;
+
+    animation:
+        glow 1s infinite alternate;
+}
+
+.final-message {
+    font-size: 25px;
+
+    max-width: 800px;
+
+    line-height: 1.8;
+
+    margin: 30px;
+}
+
+.heart {
+    font-size: 70px;
+
+    animation:
+        heartbeat 1s infinite;
+}
+
+.final-emojis {
+    font-size: 50px;
+}
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.3);
+    }
+
+}
+
+
+/* =========================
+   CONFETTI
+========================= */
+
+.confetti {
+    position: fixed;
+
+    width: 10px;
+
+    height: 15px;
+
+    top: -20px;
+
+    z-index: 9999;
+
+    animation:
+        fall linear forwards;
+}
+
+@keyframes fall {
+
+    to {
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+    }
+
+}
+
+
+/* =========================
+   HELPERS
+========================= */
+
+.next {
+    margin-top: 30px;
+}
+
+.hidden {
+    display: none;
+}

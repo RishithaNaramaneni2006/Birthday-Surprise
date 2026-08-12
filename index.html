@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Birthday Surprise 🎂</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+    <!-- START SCREEN -->
+
+    <section id="start" class="active">
+
+        <div class="gift-icon">🎁</div>
+
+        <h1>
+            I Have A Surprise...
+        </h1>
+
+        <p>
+            Someone very special deserves something special ❤️
+        </p>
+
+        <button onclick="startSurprise()">
+            Open Your Surprise 🎁
+        </button>
+
+    </section>
+
+
+    <!-- COUNTDOWN -->
+
+    <section id="countdown">
+
+        <div id="countNumber">
+            3
+        </div>
+
+    </section>
+
+
+    <!-- BIRTHDAY SCREEN -->
+
+    <section id="birthday">
+
+        <div class="balloon b1"></div>
+        <div class="balloon b2"></div>
+        <div class="balloon b3"></div>
+        <div class="balloon b4"></div>
+
+
+        <h1 class="birthday-title">
+            🎉 HAPPY BIRTHDAY 🎉
+        </h1>
+
+
+        <h2 class="name">
+            Tharuniii ❤️
+        </h2>
+
+
+        <p class="message">
+
+            Today isn't just another day...
+
+            <br>
+
+            A special day for a truly special person. ✨
+
+            <br><br>
+
+            May your birthday be filled with happiness,
+            meaningful moments, beautiful memories,
+            and everything that makes you smile. ❤️
+
+        </p>
+
+
+        <button onclick="showSection('memories')">
+            Continue → 💕
+        </button>
+
+    </section>
+
+
+    <!-- MEMORIES -->
+
+    <section id="memories">
+
+        <h2 class="section-title">
+            📸 Beautiful Memories
+        </h2>
+
+
+        <div class="memory-container">
+
+
+            <div class="memory">
+
+                <img
+                    src="T3.jpeg"
+                    alt="Memory">
+
+                <p>
+                    ✨ Cutie Pie Tharuni.
+                </p>
+
+            </div>
+
+
+            <div class="memory">
+
+                <img
+                    src="T2.jpeg"
+                    alt="Memory">
+
+                <p>
+                    ❤️ Konchem pedha Tharuniii.
+                </p>
+
+            </div>
+
+
+            <div class="memory">
+
+                <img
+                    src="T1.jpeg"
+                    alt="Memory">
+
+                <p>
+                    😂 Inkonchem Pedhaaaa Piglet Tharuniii.
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <button
+            class="next"
+            onclick="showSection('secret')">
+
+            I Have Something To Tell You 💌
+
+        </button>
+
+    </section>
+
+
+    <!-- SECRET MESSAGE -->
+
+    <section id="secret">
+
+        <h2 class="section-title">
+            💌 A Secret Message
+        </h2>
+
+
+        <p>
+            There is something waiting inside...
+        </p>
+
+
+        <div
+            class="envelope"
+            onclick="openLetter()">
+
+            💌
+
+        </div>
+
+
+        <div
+            id="secretMessage"
+            class="secret-message">
+
+
+            <p>
+
+                Cheers to all the better days ahead! 🥂❤️
+
+                <br><br>
+
+                May God bless you with some extra brain
+                this year… because clearly, the current
+                version needs an upgrade. 😂🧠
+
+            </p>
+
+
+            <br>
+
+
+            <p>
+
+                And please, for my own mental peace,
+                stop testing my patience! 😭😂
+
+                <br><br>
+
+                Especially at R&D…
+                I don’t know where you get that much
+                energy to talk to everyone. 👀😂
+
+            </p>
+
+
+            <br>
+
+
+            <p>
+
+                And one very important request —
+                please control your conversations
+                with other girls! 😤😂
+
+                <br><br>
+
+                You know I’ll start overthinking,
+                get angry, and then you’ll have to
+                deal with the consequences. 😂
+
+            </p>
+
+
+            <br>
+
+
+            <p>
+
+                So this year, please be a little more
+                sensible, a little less irritating,
+                and a lot more well-behaved. 😌😂
+
+            </p>
+
+
+            <br>
+
+
+            <p>
+
+                Have an amazing year ahead! ❤️
+
+                <br><br>
+
+                Stay happy, keep smiling, and unfortunately
+                for you… keep dealing with me too. 😂❤️
+
+            </p>
+
+
+        </div>
+
+
+        <button
+            id="giftButton"
+            class="next hidden"
+            onclick="showSection('gifts')">
+
+            One More Surprise 🎁
+
+        </button>
+
+    </section>
+
+
+    <!-- GIFTS -->
+
+    <section id="gifts">
+
+
+        <h2 class="section-title">
+            🎁 Choose A Gift
+        </h2>
+
+
+        <p>
+            Only one contains the final surprise 👀
+        </p>
+
+
+        <div class="gift-container">
+
+
+            <div
+                class="gift"
+                onclick="chooseGift(1)">
+
+                🎁
+
+            </div>
+
+
+            <div
+                class="gift"
+                onclick="chooseGift(2)">
+
+                🎁
+
+            </div>
+
+
+            <div
+                class="gift"
+                onclick="chooseGift(3)">
+
+                🎁
+
+            </div>
+
+
+        </div>
+
+
+        <!-- GIFT MESSAGE APPEARS HERE -->
+
+        <div
+            id="giftResult"
+            class="gift-result">
+        </div>
+
+
+        <!-- FINAL BUTTON -->
+
+        <button
+            id="finalButton"
+            class="next hidden"
+            onclick="showFinal()">
+
+            Open The Final Surprise 🎉
+
+        </button>
+
+
+    </section>
+
+
+    <!-- FINAL SCREEN -->
+
+    <section id="final">
+
+        <div class="heart">
+            ❤️
+        </div>
+
+
+        <h1 class="final-title">
+            HAPPY BIRTHDAY!
+        </h1>
+
+
+        <p class="final-message">
+
+            May your life always be filled with
+            happiness, laughter, love and beautiful memories.
+
+            <br><br>
+
+            Keep smiling.
+            Keep shining.
+            Keep being YOU. ✨
+
+            <br><br>
+
+            🎂 Here's to another amazing year! 🥂
+
+            <br><br>
+
+            <strong>
+                Keep trying hard for that job! 💻🔥
+            </strong>
+
+            <br><br>
+
+            Prepare well, stay focused, and don’t give up —
+            <strong>
+                your offer letter is loading… ⏳📩😂
+            </strong>
+
+            <br><br>
+
+            And don’t worry, even if you get lazy sometimes,
+            <strong>
+                I’m here to push you, motivate you,
+                and annoy you until you get back to work.
+            </strong>
+            😂❤️
+
+            <br><br>
+
+            I’ll always support you, so just keep going.
+            In a few more days, you’ll get that job! 🤞✨
+
+            <br><br>
+
+            And the day you finally get that offer letter,
+            <strong>
+                we’re going to celebrate like we both got the job!
+            </strong>
+            🥳🎉😂❤️
+
+            <br><br>
+
+            <strong>
+                So study well, work hard, and please get the job soon…
+                I’m waiting for our celebration! 😌😂❤️
+            </strong>
+
+        </p>
+
+
+        <div class="final-emojis">
+            🎂 🎈 🎁 ❤️ ✨
+        </div>
+
+    </section>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+
+    <script>
+
+        function chooseGift(number) {
+
+            const result =
+                document.getElementById("giftResult");
+
+
+            // 🎁 GIFT 1
+
+            if (number === 1) {
+
+                result.innerHTML = `
+
+                    <h3>
+                        🎉 Congratulations!
+                    </h3>
+
+                    <p>
+                        You got
+                        <strong>
+                            1% extra brain!
+                        </strong>
+                        🧠😂
+                    </p>
+
+                    <p>
+                        Please use it wisely…<br>
+
+                        <strong>
+                            It may expire without notice.
+                        </strong>
+
+                        😭😂
+                    </p>
+
+                `;
+
+            }
+
+
+            // 🎁 GIFT 2
+
+            else if (number === 2) {
+
+                result.innerHTML = `
+
+                    <h3>
+                        Oh no…! 😭😂
+                    </h3>
+
+                    <p>
+
+                        You just
+                        <strong>
+                            lost your access to unnecessary
+                            conversations with girls at R&amp;D.
+                        </strong>
+
+                        🚫👀
+
+                    </p>
+
+
+                    <p>
+
+                        Your R&amp;D talking privileges have been
+                        <strong>
+                            temporarily suspended.
+                        </strong>
+
+                        😂
+
+                    </p>
+
+
+                    <p>
+
+                        <strong>
+                            Please contact me for further clarification.
+                        </strong>
+
+                        😌
+
+                    </p>
+
+                `;
+
+            }
+
+
+            // ❤️ GIFT 3
+
+            else if (number === 3) {
+
+                result.innerHTML = `
+
+                    <h3>
+                        🎉 CONGRATULATIONS! 🎉
+                    </h3>
+
+
+                    <p>
+
+                        You got a
+                        <strong>
+                            LIFETIME MEMBERSHIP to my access!
+                        </strong>
+
+                        ❤️😂
+
+                    </p>
+
+
+                    <p>
+
+                        <strong>
+                            Benefits include:
+                        </strong>
+
+                    </p>
+
+
+                    <p>
+
+                        ❤️ Unlimited access to me
+                        <br>
+
+                        😂 Unlimited chances to annoy me
+                        <br>
+
+                        😤 Unlimited opportunities to test my patience
+                        <br>
+
+                        🫶 And lifetime support from me
+
+                    </p>
+
+
+                    <p>
+
+                        <strong>
+
+                            Membership cannot be cancelled,
+                            transferred, or given to anyone else.
+
+                        </strong>
+
+                        👀😂
+
+                    </p>
+
+
+                    <p>
+
+                        <strong>
+
+                            Congratulations…
+                            you're stuck with me! ❤️😂
+
+                        </strong>
+
+                    </p>
+
+                `;
+
+
+                // Show final button only for Gift 3
+
+                document.getElementById("finalButton")
+                    .classList.remove("hidden");
+
+
+                // Celebration
+
+                if (typeof createConfetti === "function") {
+                    createConfetti();
+                }
+
+                if (typeof fireworks === "function") {
+                    fireworks();
+                }
+
+            }
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
